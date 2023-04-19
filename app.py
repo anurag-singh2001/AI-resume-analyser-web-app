@@ -11,8 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
-nltk.download('stopwords')
-
+nltk.data.path.append('stopwords')
 stopw  = set(stopwords.words('english'))
 
 df =pd.read_csv('jobs.csv') 
