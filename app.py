@@ -4,11 +4,14 @@ from flask import Flask,render_template,redirect,request
 import numpy as np
 import pandas as pd
 import re
+import nltk
 from ftfy import fix_text
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+
+nltk.download('stopwords')
 
 stopw  = set(stopwords.words('english'))
 
