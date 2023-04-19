@@ -11,9 +11,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
-nltk.download('stopwords')
+# nltk.download('stopwords')
 
-stopw  = set(stopwords.words('english'))
+# stopw  = set(stopwords.words('english'))
+
+with open('english') as f:
+    stopw = set(f.read().split())
+
 
 df =pd.read_csv('jobs.csv') 
 df['test']=df['Job_Description'].apply(lambda x: ' '.join([word for word in str(x).split() if len(word)>2 and word not in (stopw)]))
